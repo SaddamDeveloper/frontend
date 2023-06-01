@@ -1,6 +1,6 @@
 import { store } from "quasar/wrappers";
 import { createPinia } from "pinia";
-import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
+import {piniaPluginPersistedstate} from "pinia-plugin-persistedstate";
 /*
  * If not building with SSR mode, you can
  * directly export the Store instantiation;
