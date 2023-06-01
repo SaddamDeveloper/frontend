@@ -8,7 +8,7 @@ import axiosErrorHandler from "src/utils/axiosErrorHandler.js";
 import PageWrapper from "layouts/common/PageWrapper.vue";
 import CustomInput from "components/common/CustomInput.vue";
 import AddButton from "components/buttons/AddButton.vue";
-import Placeholder from "components/Placeholder.vue";
+import PlaceHolder from "src/components/PlaceHolder.vue";
 import FormWrapper from "components/forms/FormWrapper.vue";
 import FormSection from "components/forms/FormSection.vue";
 import FormSectionTitle from "components/forms/FormSectionTitle.vue";
@@ -21,7 +21,7 @@ import dayjs from "dayjs";
 
 // "async" is optional;
 // more info on params: https://v2.quasar.dev/quasar-cli/boot-files
-export default boot(async ({ app, router }) => {
+export default boot(async ({ app }) => {
   localforage.config({
     name: appName,
     version: version,
@@ -39,7 +39,7 @@ function configureDayJs() {
   window.dayjs = dayjs;
 }
 
-function configureAxios(app) {
+function configureAxios() {
   axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
   // axios.defaults.withCredentials = true;
 
@@ -56,7 +56,7 @@ function mountGlobalVueComponent(app) {
   app.component("PageWrapper", PageWrapper);
   app.component("CustomInput", CustomInput);
   app.component("AddButton", AddButton);
-  app.component("Placeholder", Placeholder);
+  app.component("PlaceHolder", PlaceHolder);
   app.component("FormWrapper", FormWrapper);
   app.component("FormSection", FormSection);
   app.component("FormSectionTitle", FormSectionTitle);
